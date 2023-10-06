@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <Email<br>
+    <input type="email" id="input_email"><br>
+
+    Senha<br>
+    <input type="password" id="input_senha">
+    <button onclick="validarsenha()">Validar...</button>
+    <div id="div_8caracter"></div>
+    <div id="div_numero"></div>
+    <div id="div_maiuscula"></div>
+    <div id="div_minuscula"></div>
+    <div id="div_especial"></div>
+</body>
+
+</html>
+<script>
+    function validarsenha() {
+
+        var senha = input_senha.value;
+
+        // senha com 8 dígitos no mínimo
+        if (senha.length >= 8) {
+            div_8caracter.innerHTML = 'sua senha possui pelo menos 8 caracteres !<br>'
+        } else {
+            div_8caracter.innerHTML = 'sua senha não possui pelo menos 8 caracteres !<br>'
+        }
+
+        // senha possuir pelo menos um numero
+        if (senha.indexOf("0") > -1 ||
+            senha.indexOf("1") > -1 ||
+            senha.indexOf("2") > -1 ||
+            senha.indexOf("3") > -1 ||
+            senha.indexOf("4") > -1 ||
+            senha.indexOf("5") > -1 ||
+            senha.indexOf("6") > -1 ||
+            senha.indexOf("7") > -1 ||
+            senha.indexOf("8") > -1 ||
+            senha.indexOf("9") > -1) {
+            div_numero.innerHTML = 'tem número <br>'
+        } else {
+            div_numero.innerHTML = 'nao tem número<br>'
+        }
+        // senha possuir pelo menos uma letra maiuscula
+        if (senha.toLowerCase() == senha) {
+            div_maiuscula.innerHTML = 'nao tem letra maiuscula<br>'
+        } else {
+            div_maiuscula.innerHTML = 'tem letra maiuscula<br>'
+
+        }
+        // senha possuir uma letra minuscula
+        if (senha.toUpperCase() == senha) {
+            div_minuscula.innerHTML = 'nao tem letra minuscula<br>'
+        } else {
+            div_minuscula.innerHTML = 'tem letra minuscula<br>'
+
+        }
+        // senha possuir um caractere especial
+        if (senha.indexOf("!") > -1 ||
+            senha.indexOf("@") > -1 ||
+            senha.indexOf("#") > -1 ||
+            senha.indexOf("$") > -1 ||
+            senha.indexOf("%") > -1 ||
+            senha.indexOf("^") > -1 ||
+            senha.indexOf("&") > -1 ||
+            senha.indexOf("(") > -1 ||
+            senha.indexOf(")") > -1 ||
+            senha.indexOf(")") > -1 ||
+            senha.indexOf(")") > -1 ||
+            senha.indexOf("+") > -1 ||
+            senha.indexOf("{") > -1 ||
+            senha.indexOf("}") > -1 ||
+            senha.indexOf("]") > -1 ||
+            senha.indexOf("[") > -1 ||
+            senha.indexOf("|") > -1 ||
+            senha.indexOf(";") > -1 ||
+            senha.indexOf(":") > -1 ||
+            senha.indexOf("?") > -1 ||
+            senha.indexOf("'") > -1 ||
+            senha.indexOf(`"`) > -1 ||
+            // senha.indexOf("\") > -1 ||
+            senha.indexOf("<") > -1 ||
+            senha.indexOf(">") > -1 ||
+            senha.indexOf(",") > -1 ||
+            senha.indexOf(".") > -1 ||
+            senha.indexOf("~") > -1 ||
+            senha.indexOf("/") > -1 ||
+            senha.indexOf("-") > -1 ||
+            senha.indexOf("_") > -1) {
+            div_especial.innerHTML = 'tem caractere especial <br>'
+        } else {
+            div_especial.innerHTML = 'nao tem caractere especial <br>'
+        }
+        //!@#$ %^&* ()_ + {}[] |\\: ; \"'<>,.?/~-
+
+
+
+
+
+
+
+    }
+
+</script>
