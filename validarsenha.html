@@ -8,17 +8,24 @@
 </head>
 
 <body>
-    <Email<br>
-    <input type="email" id="input_email"><br>
 
-    Senha<br>
-    <input type="password" id="input_senha">
-    <button onclick="validarsenha()">Validar...</button>
-    <div id="div_8caracter"></div>
-    <div id="div_numero"></div>
-    <div id="div_maiuscula"></div>
-    <div id="div_minuscula"></div>
-    <div id="div_especial"></div>
+    <br>
+    <div>
+       <h2>VALIDAÇÃO DE EMAIL E SENHA</h2> 
+    </div>
+    email
+        <input type="email" id="input_email"><br>
+
+        Senha
+        <input type="password" id="input_senha"><br>
+        <button onclick="validarsenha()">Validar...</button>
+        <div id="div_emailarroba"></div>
+        <div id="div_8caracter"></div>
+        <div id="div_numero"></div>
+        <div id="div_maiuscula"></div>
+        <div id="div_minuscula"></div>
+        <div id="div_especial"></div>
+    
 </body>
 
 </html>
@@ -26,6 +33,13 @@
     function validarsenha() {
 
         var senha = input_senha.value;
+        var email = input_email.value;
+        // email possuiir @
+        if (email.indexOf("@") > -1) {
+            div_emailarroba.innerHTML = "seu email é válido"
+        } else {
+            div_emailarroba.innerHTML = "seu email é inválido, insira um @"
+        }
 
         // senha com 8 dígitos no mínimo
         if (senha.length >= 8) {
